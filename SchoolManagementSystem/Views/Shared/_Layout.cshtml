@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>@ViewBag.Title - School System</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">*@
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/mdb.min.css" rel="stylesheet">
+    <link href="~/css/style.css" rel="stylesheet">
+    <link href="~/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a style='padding-left:9px;' href="javascript:void(0)" onclick="closeNav()"><img src="~/assets/images/if_dashboard_basic_blue_69481.png"/></i><span class="nav-li fa fa-close fa-pull-right"></span></a>
+        <a style='padding-left:9px;text-align:center;' href="/Home/Index"><i class="fa fa-dashboard fa-2x text-success" title="Dashboard"></i><span  class='nav-li'> Dashboard</span></a>
+        <a style='padding-left:9px;text-align:center;' href="/Home/Student"><i class="fa fa-user fa-2x text-success" title="students" ></i><span  class='nav-li'> Dashboard</span></a>
+        <a style='padding-left:9px;text-align:center;' href="/Home/Parents"><i class="fa fa-male"></i><span  class='nav-li'> Dashboard</span></a>
+        <a style='padding-left:9px;text-align:center;' href="#"><img src="~/assets/images/if_dashboard_basic_blue_69481.png" /><span  class='nav-li'> Dashboard</span></a>
+        <a style='padding-left:9px;text-align:center;' href="#"><img src="~/assets/images/if_dashboard_basic_blue_69481.png" /><span  class='nav-li'> Dashboard</span></a>
+    </div>
+
+    <div id="main" >
+        @*<h1>
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+        </h1>*@
+
+        <div class="container-fluid">
+            @RenderBody()
+        </div>
+    </div>
+    <script type="text/javascript" src="~/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="~/js/popper.min.js"></script>
+    <script type="text/javascript" src="~/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/js/mdb.min.js"></script>
+    <script src="~/js/sidebar.min.js"></script>
+    <script src="~/Scripts/jquery.canvasjs.min.js"></script>
+    <script>
+        //function openNav() {
+        function closeNav() {
+            if (document.getElementById("mySidenav").style.width == "250px") {
+                
+                document.getElementById("mySidenav").style.width = "65px";
+                document.getElementById("main").style.marginLeft = "65px";
+                $('.nav-li').each(function () {
+                    $(this).hide();
+                });
+            }
+            else {
+                
+                document.getElementById("mySidenav").style.width = "250px";
+                document.getElementById("main").style.marginLeft = "250px";
+                setTimeout(function () {
+                    $('.nav-li').each(function () {
+                        $(this).show();
+                    });
+                }, 250);
+            }
+        }
+
+        //function closeNav() {
+        //    document.getElementById("mySidenav").style.width = "65px";
+        //    document.getElementById("main").style.marginLeft = "65";
+        //}
+
+    </script>
+    <script>
+        window.onload = function () {
+            $('.nav-li').each(function () {
+                $(this).hide();
+            });
+
+
+            var options = {
+                animationEnabled: true,
+                title: {
+                    text: "GDP Growth Rate - 2016"
+                },
+                axisY: {
+                    title: "Growth Rate (in %)",
+                    suffix: "%",
+                    includeZero: false
+                },
+                axisX: {
+                    title: "Countries"
+                },
+                data: [{
+                    type: "column",
+                    yValueFormatString: "#,##0.0#" % "",
+                    dataPoints: [
+                        { label: "Iraq", y: 10.09 },
+                        { label: "Turks & Caicos Islands", y: 9.40 },
+                        { label: "Nauru", y: 8.50 },
+                        { label: "Ethiopia", y: 7.96 },
+                        { label: "Uzbekistan", y: 7.80 },
+                        { label: "Nepal", y: 7.56 },
+                        { label: "Iceland", y: 7.20 },
+                        { label: "India", y: 7.1 }
+
+                    ]
+                }]
+            };
+            $("#chartContainer").CanvasJSChart(options);
+
+        }
+    </script>
+</body>
+</html>
