@@ -6,28 +6,39 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>@ViewBag.Title - School System</title>
     <link href="~/Content/font-awesome.css" rel="stylesheet" />
-    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">*@
+    <link href="~/Content/w3.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/css/mdb.min.css" rel="stylesheet">
     <link href="~/css/style.css" rel="stylesheet">
     <link href="~/css/style.css" rel="stylesheet">
     <link href="~/Content/DataTables/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <style>
+        .n-b {
+            height: 48px;
+        }
+        .btn{
+            z-index:0;
+        }
+    </style>
 </head>
 <body>
-    <div id="mySidenav" class="sidenav">
-        <a style='padding-left:9px;' href="javascript:void(0)" onclick="closeNav()"><img src="~/assets/images/if_dashboard_basic_blue_69481.png" /></i><span class="nav-li fa fa-close fa-pull-right"></span></a>
-        <a style='padding-left:9px;text-align:center;' href="/Home/Index"><i class="fa fa-dashboard fa-2x text-success" title="Dashboard"></i><span class='nav-li'> Dashboard</span></a>
-        <a style='padding-left:9px;text-align:center;' href="/Home/Student"><i class="fa fa-user fa-2x text-success" title="students"></i><span class='nav-li'> Dashboard</span></a>
-        <a style='padding-left:9px;text-align:center;' href="/Home/Parents"><i class="fa fa-male"></i><span class='nav-li'> Dashboard</span></a>
-        <a style='padding-left:9px;text-align:center;' href="#"><img src="~/assets/images/if_dashboard_basic_blue_69481.png" /><span class='nav-li'> Dashboard</span></a>
-        <a style='padding-left:9px;text-align:center;' href="#"><img src="~/assets/images/if_dashboard_basic_blue_69481.png" /><span class='nav-li'> Dashboard</span></a>
+    <div class="w3-sidebar w3-bar-block w3-black w3-xxlarge sidenav" style="width:0; padding-top:0;" id="mySidenav">
+        <button class="w3-bar-item w3-button text-right"><i class="fa fa-close" id="close" onclick="toggleNav()"></i></button>
+        <h4>School Management</h4>
+        <a href="/Home/Index" class="w3-bar-item w3-button n-b"><i class="fa fa-home"></i><label style="margin-left:15px;">Dashboard</label></a>
+        <a href="/Students/Index" class="w3-bar-item w3-button n-b"><i class="fa fa-group"></i><label style="margin-left:15px;">Students</label></a>
+        <a href="/Teacher/Index" class="w3-bar-item w3-button n-b"><i class="fa fa-male"></i><label style="margin-left:15px;">Teachers</label></a>
+        <a href="/Classes/Index" class="w3-bar-item w3-button n-b"><i class="fa fa-university"></i><label style="margin-left:15px;">Dashboard</label></a>
+        <a href="#" class="w3-bar-item w3-button n-b"><i class="fa fa-trash"></i><label style="margin-left:15px;">Dashboard</label></a>
     </div>
-    <div id="main">
-        
-        @*<h1>
-            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
-        </h1>*@
+    <div id="main" style="margin-left:0;">
         <div class="container-fluid">
+            <div class="row form-group">
+                <div class="col-sm-12">
+                    <button class="w3-bar-item w3-button bg-light" role="button" onclick="toggleNav()"><i class="fa fa-bars"></i></button>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-sm-12">
                     <p>
@@ -46,11 +57,9 @@
     <script src="~/Scripts/jquery.canvasjs.min.js"></script>
     <script>
         //function openNav() {
-        function closeNav() {
+        function toggleNav() {
             if (document.getElementById("mySidenav").style.width == "250px") {
-
-                document.getElementById("mySidenav").style.width = "65px";
-                document.getElementById("main").style.marginLeft = "65px";
+                document.getElementById("mySidenav").style.width = "0px";
                 $('.nav-li').each(function () {
                     $(this).hide();
                 });
@@ -58,7 +67,6 @@
             else {
 
                 document.getElementById("mySidenav").style.width = "250px";
-                document.getElementById("main").style.marginLeft = "250px";
                 setTimeout(function () {
                     $('.nav-li').each(function () {
                         $(this).show();
@@ -66,15 +74,11 @@
                 }, 250);
             }
         }
-
-        //function closeNav() {
-        //    document.getElementById("mySidenav").style.width = "65px";
-        //    document.getElementById("main").style.marginLeft = "65";
-        //}
-
     </script>
     <script>
         window.onload = function () {
+            document.getElementById("bars").style.display = "block";
+            document.getElementById("close").style.display = "none";
             $('.nav-li').each(function () {
                 $(this).hide();
             });
