@@ -21,5 +21,11 @@ namespace SchoolManagementSystem.Controllers
             ViewBag.Method = "New Class";
             return View();
         }
+        public ActionResult TimeTable()
+        {
+            ViewBag.Controller = "Classes";
+            ViewBag.Method = "Time Table";
+            return View();
+        }
     }
 }

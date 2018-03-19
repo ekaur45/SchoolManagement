@@ -1,9 +1,10 @@
-﻿    
+﻿
 @{
     ViewBag.Title = "Student";
 }
 <style>
-    .avatar {
+
+    .avatar_1 {
         border-radius: 50%;
         max-width: 260px;
         margin-top: 0;
@@ -14,17 +15,9 @@
     }
 </style>
 <div class="dashboard">
-    <div class="row">
-        <div class="col-sm-12">
-            <p>
-                <span>Home</span> | <span class="text-info">Student</span>
-            </p>
-        </div>
-    </div>
-
     <div class="row margin-right-0px dashboard-widget">
         <div class="col-sm-3 dashboard-widget-container">
-            <div class="avatar mx-auto white">
+            <div class="avatar_1 mx-auto white">
                 <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2810%29.jpg" class="rounded-circle" alt="woman avatar" style="width:100%;">
             </div>
             <div>
@@ -100,61 +93,60 @@
                     <h6 class="text-center"><i class="fa fa-area-chart fa-2x white-text"></i></h6>
                     <p class="text-center text-white">Attendance</p>
                 </div>
+                <div class="row" style="margin-left:15px;margin-right:0">
+                    <p>
+                        <span class="text-info">General Documents</span>
+                    </p>
+                    <table class="table">
+                        <tr>
+                            <td>Sr #</td>
+                            <td>File Name</td>
+                            <td>Action</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                Transcript
+                            </td>
+                            <td>
+                                <i class="fa fa-download "></i>
+                                <i class="fa fa-trash "></i>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="row" style="margin-left:15px;margin-right:0">
+                    <p class="text-dark"><i class="fa fa-inbox"></i>Message to Paarents</p>
+                    <input type="text" class="form-group" style="width:100%; padding-left:15px;height:45px;" placeholder="Subject" />
+                    <textarea class="form-group" style="width:100%;min-height:200px;padding:15px;" placeholder="Message"></textarea>
+                    <button class="btn btn-outline-success" style="margin:0;">Send and Notify <i class="fa fa-paper-plane"></i></button>
+                </div>
             </div>
-            <div class="row" style="margin-left:15px;margin-right:0">
-                <p>
-                    <span class="text-info">General Documents</span>
-                </p>
-                <table class="table table-responsive table-responsive-lg">
+        </div>
+        <div class="row margin-right-0px dashboard-widget">
+            <div class="col-sm-12 dashboard-widget-container">
+                <p class="text-primary">Related To:</p>
+                <table class="table">
                     <tr>
-                        <td>Sr #</td>
-                        <td>File Name</td>
-                        <td>Action</td>
+                        <th>
+                            Sr#
+                        </th>
+                        <th>
+                            Guardian's Name
+                        </th>
+                        <th>
+                            Contact
+                        </th>
                     </tr>
                     <tr>
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            Transcript
-                        </td>
-                        <td>
-                            <button class="btn btn-sm btn-outline-success"><i class="fa fa-download "></i></button>
-                            <button class="btn btn-sm btn-outline-danger"><i class="fa fa-trash "></i></button>
-                        </td>
+                        <td>1</td>
+                        <td>SomeOne</td>
+                        <td>(123) 456-7890</td>
                     </tr>
                 </table>
             </div>
-            <div class="row" style="margin-left:15px;margin-right:0">
-                <p class="text-dark"><i class="fa fa-inbox"></i>Message to Paarents</p>
-                <input type="text" class="form-group" style="width:100%; padding-left:15px;height:45px;" placeholder="Subject" />
-                <textarea class="form-group" style="width:100%;min-height:200px;padding:15px;" placeholder="Message"></textarea>
-                <button class="btn btn-outline-success" style="margin:0;">Send and Notify <i class="fa fa-arrow-circle-right"></i></button>
-            </div>
-        </div>
-
-    </div>
-    <div class="row margin-right-0px dashboard-widget">
-        <div class="col-sm-12 dashboard-widget-container">
-            <p class="text-primary">Related To:</p>
-            <table class="table table-bordered table-responsive-lg">
-                <tr>
-                    <th>
-                        Sr#
-                    </th>
-                    <th>
-                        Guardian's Name
-                    </th>
-                    <th>
-                        Contact
-                    </th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>SomeOne</td>
-                    <td>(123) 456-7890</td>
-                </tr>
-            </table>
         </div>
     </div>
 </div>

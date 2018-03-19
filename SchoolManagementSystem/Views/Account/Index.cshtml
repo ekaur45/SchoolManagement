@@ -1,0 +1,35 @@
+﻿@model SchoolManagementSystem.Models.loginModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <form action="/Account/Login" method="post">   
+        <table>
+            <tr>
+                <td>username:</td>
+                <td>@Html.TextBoxFor(x => x.username)</td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td>@Html.PasswordFor(x => x.password)</td>
+
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type="submit">Login</button></td>
+            </tr>
+        </table>
+        </form>
+    </div>
+</body>
+</html>
