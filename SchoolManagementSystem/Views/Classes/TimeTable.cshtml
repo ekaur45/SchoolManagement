@@ -2,3 +2,104 @@
 @{
     ViewBag.Title = "TimeTable";
 }
+
+<div class="row">
+    <form method="post" action="/Classes/SaveTimeTable">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <p style="margin-bottom:0;"><label class="">All Students </label><span class="pull-right"><a><i class="fa fa-caret-down text-info"></i></a> <a> <i class="fa fa-refresh text-success"></i></a><a> <i class="fa fa-close text-danger"></i></a></span></p>
+                </div>
+
+                <div class="card-body form-dark scrollbar-dusty-grass thin square" style="overflow:auto;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Time slot</td>
+                                <td>Monday</td>
+                                <td>Tuesday</td>
+                                <td>Wednessday</td>
+                                <td>Thursaday</td>
+                                <td>Friday</td>
+                                <td>Satureday</td>
+                            </tr>
+                        </thead>
+                        <tbody id="timetable">
+                            <tr>
+                                <td>
+                                    <input type="time" placeholder="" value="12:00 AM"/>-<input type="time" placeholder="" value="12:00 AM"/>
+                                </td>
+                                <td>
+                                    <input type="text" placeholder="" />
+                                </td>
+                                <td>
+                                    <input type="text" placeholder="" />
+                                </td>
+                                <td>
+                                    <input type="text" placeholder="" />
+                                </td>
+                                <td>
+                                    <input type="text" placeholder="" />
+                                </td>
+                                <td>
+                                    <input type="text" placeholder="" />
+                                </td>
+                                <td>
+                                    <input type="text" placeholder="" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <input type="hidden" id="tbl" name="name" value="" />
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <input type="button" value="ADD NEW ROW" onclick="addRow()" />
+                            <input type="button" value="SAVE TIME TABLE" onclick="saveTimeTable()" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    function addRow() {
+        $('#timetable').append('<tr><td><input type="time" placeholder="" value="12:00 AM"/>-<input type="time" placeholder="" value="12:00 AM" /></td><td><input type="text" placeholder="" /></td><td><input type="text" placeholder="" /></td><td><input type="text" placeholder="" /></td><td><input type="text" placeholder="" /></td><td><input type="text" placeholder="" /></td><td><input type="text" placeholder="" /></td></tr>');
+    }
+    function saveTimeTable() {
+        var table="";
+        if ($('#timetable').children().length < 6) {
+            alert('Error');
+        } else {
+            var numberOfRows = $('#timetable').children().length;
+            for (var i = 0; i < numberOfRows; i++) {
+                var row = "";
+                for (var j = 0; j < $('#timetable').children()[i].children.length; j++) {
+                    if (j==0) {
+                        var a=$('#timetable').children()[i].children[j].children[0].defaultValue;
+                        var b = $('#timetable').children()[i].children[j].children[1].defaultValue;
+                        row +=a + "-" + b+"%";
+                    }
+                    else {
+                        var a = $('#timetable').children()[i].children[j].children[0].value;
+                        row+=a+"%";
+                    }
+                }
+                table +=row+";";
+            }
+            console.log(table);
+            $.ajax({
+                method: 'POST',
+                url: 'http://localhost:24674/api/values/dd?tbl=' + table,
+                type:'application/json',
+                success: function (d) {
+                    debugger
+                },
+                error: function (d) {
+
+                }
+            })
+
+        }
+    }
+</script>

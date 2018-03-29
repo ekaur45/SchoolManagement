@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -26,6 +27,10 @@ namespace SchoolManagementSystem.Controllers
             ViewBag.Controller = "Classes";
             ViewBag.Method = "Time Table";
             return View();
+        }
+        public void SaveTimeTable(SchoolManagementSystem.Models.tbl table)
+        {
+
         }
     }
 }
