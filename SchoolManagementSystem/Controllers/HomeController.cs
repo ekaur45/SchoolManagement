@@ -16,7 +16,6 @@ namespace SchoolManagementSystem.Controllers
         }
 
         public ActionResult Student()
-
         {
             ViewBag.Controller = "Dashboard";
             ViewBag.Method = "Teachers";

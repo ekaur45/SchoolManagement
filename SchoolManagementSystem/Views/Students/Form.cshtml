@@ -2,150 +2,56 @@
 @{
     ViewBag.Title = "Admission Form";
 }
-<div class="row">
-    <div class="col-sm-12">
+<form method="post" action="/Students/insertStudent" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-sm-5">
+            <label>Firstname</label>
+            <input type="text" name="firstname" class="form-control" />
+        </div>
+        <div class="col-sm-2">
 
-        <div class="card">
-            <div class="card-header">
-                <p style="margin-bottom:0;"><label class="">Add Student Form </label><span class="pull-right"><a><i class="fa fa-caret-down text-info"></i></a> <a> <i class="fa fa-refresh text-success"></i></a><a> <i class="fa fa-close text-danger"></i></a></span></p>
-            </div>
-            <div class="card-body">
-                <div class="row form-group">
-                    <div class="col-sm-12">
-                        <h6><span class="border-bottom">Student Information</span></h6>
-                    </div>
-                </div>
-                <div class="row form-group">
+        </div>
+        <div class="col-sm-5">
+            <label>Lastname</label>
+            <input type="text" name="lastname" class="form-control" />
+        </div>
+        <div class="col-sm-5">
+            <label>Parent</label>
+            <input type="text" class="form-control" name="parent"/>
+        </div>
+        <div class="col-sm-2">
 
-                    <div class="col-sm-3">
-                        <label>First Name</label>
-                        <input type="text" name="" value="" class="form-control" />
-                    </div>
-                    <div class="col-sm-3">
-                        <label>Last Name</label>
-                        <input type="text" name="" value="" class="form-control" />
-                    </div>
-                    <div class="col-sm-3">
-                        <label>First Name</label>
-                        <select class="form-control">
-                            <option value="value">text</option>
-                            <option value="value">text</option>
-                            <option value="value">text</option>
-                            <option value="value">text</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <label>First Name</label>
-                        <select class="form-control">
-                            <option value="value">text</option>
-                            <option value="value">text</option>
-                            <option value="value">text</option>
-                            <option value="value">text</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <div class="col-sm-3">
-                        <label>First Name</label>
-                        <select class="form-control">
-                            <option value="value">text</option>
-                            <option value="value">text</option>
-                            <option value="value">text</option>
-                            <option value="value">text</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <label>DOB</label>
-                        <input type="text" name="" value="" class="form-control" />
-                    </div>
-                    <div class="col-sm-3">
-                        <label>Last Name</label>
-                        <input type="text" name="" value="" class="form-control" />
-                    </div>
-                    <div class="col-sm-3">
-                        <label>Last Name</label>
-                        <input type="text" name="" value="" class="form-control" />
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <div class="col-sm-3">
-                        <label>DOB</label>
-                        <input type="text" name="" value="" class="form-control" />
-                    </div>
-                    <div class="col-sm-3">
-                        <label>Last Name</label>
-                        <input type="text" name="" value="" class="form-control" />
-                    </div>
-                    <div class="col-sm-3">
-                        <label style="width:100%;">Last Name</label>
-                        <label class="btn btn-primary btn-md" style="margin:0;">Browse<input type="file" name="name" value="" style="display:none;" /> <i class="fa fa-upload fa-2x"></i></label>
-                    </div>
-                    <div class="col-sm-3">
+        </div>
+        <div class="col-sm-5">
+            <label>Address</label>
+            <textarea name="address" style="max-width:100%;min-width:100%;max-height:250px;min-height:25px;" class="form-control"></textarea>
+        </div>
+        <div class="col-sm-5">
+            <label>Phone number</label>
+            <input type="text" class="form-control" name="phonenumber" />
+        </div>
+        <div class="col-sm-2">
 
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <div class="col-sm-12">
-                        <h6><span class="border-bottom">Student Information</span></h6>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <div class="col-sm-3">
-                        <label>DOB</label>
-                        <input type="text" name="" value="" class="form-control" />
-                    </div>
-                    <div class="col-sm-3">
-                        <label>Last Name</label>
-                        <input type="text" name="" value="" class="form-control" />
-                    </div>
-                    <div class="col-sm-3">
-                        <label style="width:100%;">Last Name</label>
-                        <input type="text" name="" value="" class="form-control" />
-                    </div>
-                    <div class="col-sm-3">
-                        <label style="width:100%;">Last Name</label>
-                        <input type="text" name="" value="" class="form-control" />
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <div class="col-sm-3">
-                        <label>DOB</label>
-                        <input type="text" name="" value="" class="form-control" />
-                    </div>
-                    <div class="col-sm-3">
-                        <label>Last Name</label>
-                        <input type="text" name="" value="" class="form-control" />
-                    </div>
-                    <div class="col-sm-3">
-                        <label style="width:100%;">Last Name</label>
-                        <input type="text" name="" value="" class="form-control" />
-                    </div>
-                    <div class="col-sm-3">
-                        <label style="width:100%;">Last Name</label>
-                        <input type="text" name="" value="" class="form-control" />
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <div class="col-sm-3">
-                        <label style="width:100%;">DOB</label>
-                        <label class="btn btn-primary btn-md" style="margin:0;">Browse<input type="file" name="name" value="" style="display:none;" /> <i class="fa fa-upload fa-2x"></i></label>
-                    </div>
-                    <div class="col-sm-3">
-                    </div>
-                    <div class="col-sm-3">
-                    
-                    </div>
-                    <div class="col-sm-3">
+        </div>
+        <div class="col-sm-5">
+            <br />
+            
+            <label class="btn btn-outline-info btn-md">
+                Select an Image
+                <input type="file" name="files" id="file1" hidden="hidden"/>
+            </label>
+        </div>
+        <div class="col-sm-5">
+            <label>Email</label>
+            <input type="email" class="form-control" name="email"/>
+        </div>
+        <div class="col-sm-2">
 
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <div class="col-sm-12">
-                        <button class="btn btn-md btn-success" style="margin:0;">Save</button>
-                        <button class="btn btn-md btn-danger" style="margin:0;">Reset</button>
-                    </div>
-                </div>
-            </div>
+        </div>
+        <div class="col-sm-5">
+            <br />
+            <button type="submit" class="btn btn-outline-dark-green btn-md">Save <i class="fa fa-save fa-2x"></i></button>
+            <button type="reset" class="btn btn-outline-danger btn-md" value="">Cancel <i class="fa fa-trash fa-2x"></i><i></i></button>
         </div>
     </div>
-</div>
+</form>
